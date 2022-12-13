@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: fan_voice_api_production
-  username: fan_voice_api
-  password: <%= ENV["FAN_VOICE_API_DATABASE_PASSWORD"] %>
+  # database: fan_voice_api_production
+  # username: fan_voice_api
+  # password: <%= ENV["FAN_VOICE_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
