@@ -14,7 +14,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
   allow do
-    origins "https://fan-voice-api-production.up.railway.app"
+    origins "https://fan-voice-api-production-2957.up.railway.app/"
 
     resource "*",
       headers: :any,
