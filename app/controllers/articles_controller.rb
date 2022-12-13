@@ -18,9 +18,19 @@ class ArticlesController < ApplicationController
         render json: article, status: :created
     end
 
+    def destroy 
+        article = Article.find_by(params[:id])
+        if article 
+            article.destroy
+            head :no_content
+        else
+            render json:{ error:"Article not found" }, status: :not_found
+        end
+    end
+
     private 
 
     def article_params
-        params.permit(:title, :img, :content,:user_id, :category_id)
+        params.permit(:title, :img, :content, :user_id, :category_id)
     end
 end
